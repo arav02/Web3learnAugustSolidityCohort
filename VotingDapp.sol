@@ -8,11 +8,11 @@ contract vote{
     address payable public  candidate2 = payable(0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB);
     mapping(address=>uint) user;
     mapping(address=>bool) chek;
-    uint votingtimeperiod; // store the time at which contract was deployed
+    uint votingtimeperiod;
     address payable public owner;
     constructor(){
         owner = payable(msg.sender);
-        votingtimeperiod = block.timestamp + 15 minutes;
+        votingtimeperiod = block.timestamp + 15 minutes;//setting voting period. Voting will be closed after 15 min of deployment.
     }
 
     modifier onlyowner(){
